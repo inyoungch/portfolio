@@ -13,6 +13,13 @@ const gulpWebpack = require('gulp-webpack');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 
+const plumber = require('gulp-plumber');
+
+const svgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
+
 const paths = {
     root: './build',
     templates: {
@@ -47,6 +54,7 @@ function templates() {
 // scss
 function styles() {
     return gulp.src('./src/styles/app.scss')
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(sourcemaps.write())
@@ -94,6 +102,38 @@ function fonts() {
         .pipe(gulp.dest(paths.fonts.dest));
 }
 
+//svg
+function svgSpriteBuild() {
+    return gulp.src('src/images/icons/*.svg')
+    // minify svg
+        .pipe(svgmin({
+            js2svg: {
+                pretty: true
+            }
+        }))
+        // remove all fill, style and stroke declarations in out shapes
+		.pipe(cheerio({
+			run: function ($) {
+				$('[fill]').removeAttr('fill');
+				$('[stroke]').removeAttr('stroke');
+				$('[style]').removeAttr('style');
+			},
+			parserOptions: {xmlMode: true}
+        }))
+        // cheerio plugin create unnecessary string '&gt;', so replace it.
+        .pipe(replace('&gt;', '>'))
+
+        // build svg sprite
+		.pipe(svgSprite({
+            mode: {
+                symbol: {
+                    sprite: "../sprite.svg"
+                }
+            }
+        }))// svg sprite путь build/assets/images/sprite.svg
+        .pipe(gulp.dest(paths.images.dest))
+};
+
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
@@ -102,6 +142,6 @@ exports.fonts = fonts;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, scripts, fonts),
+    gulp.parallel(styles, templates, images, scripts, fonts,svgSpriteBuild),
     gulp.parallel(watch, server)
 ));
