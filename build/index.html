@@ -11,16 +11,45 @@
     <script src="/assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <h1>Главная</h1>
-    <svg>
-      <use xlink:href="assets/images/sprite.svg#about_header"></use>
-    </svg>
-    <h2>Меню</h2>
-    <ul class="menu">
-      <li><a href="/index.html">Главная</a></li>
-      <li><a href="/about.html">Обо мне</a></li>
-      <li><a href="my-works.html">Мои работы</a></li>
-      <li><a href="blog.html">Блог</a></li>
-    </ul>
+    <div class="block">
+      <div class="top">
+        <button class="auth">Авторизоваться</button>
+      </div>
+      <div class="center">
+        <div class="user welcome__user">
+          <div class="user__pic"><img class="user__pic-img" src="assets/images/ava.jpg"></div>
+          <div class="user__description">
+            <div class="user__name">Цой Инна</div>
+            <div class="user__info">Личный сайт разработчика</div>
+          </div>
+        </div>
+        <div class="welcome-socials">
+          <ul class="socials">
+            <li class="socials__item"><a class="socials__link socials__vk" href="#">
+                <svg class="socials__icon">
+                  <use xlink:href="assets/images/sprite.svg#vk"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link socials__github" href="#">
+                <svg class="socials__icon">
+                  <use xlink:href="assets/images/sprite.svg#github"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link socials__in" href="#">
+                <svg class="socials__icon">
+                  <use xlink:href="assets/images/sprite.svg#in"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+        <nav class="menu welcome__menu">
+          <ul class="menu__list">
+            <li class="menu__item"><a class="menu__link" href="#">Мои работы</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Обо мне</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Блог</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="bottom">
+        <div class="rights">&copy; Цой Инна | создано с любовью в LoftSchool | 2017</div>
+      </div>
+    </div>
   </body>
 </html>

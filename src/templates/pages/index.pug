@@ -4,7 +4,27 @@ block variables
     - var title = 'Добро пожаловать'
 
 block content
-    h1 Главная
-    svg
-        use(xlink:href='assets/images/sprite.svg#about_header')
-        
+    .block
+        .top
+            button.auth Авторизоваться
+        .center
+            .user.welcome__user
+                .user__pic
+                    img.user__pic-img(src="assets/images/ava.jpg")
+                .user__description
+                    .user__name Цой Инна
+                    .user__info Личный сайт разработчика
+            .welcome-socials
+                ul.socials
+                    each item in ['vk', 'github', 'in']
+                        li.socials__item
+                            a(href="#" class=`socials__link socials__${item}`)
+                                svg.socials__icon
+                                    use(xlink:href=`assets/images/sprite.svg#${item}`)
+            nav.menu.welcome__menu
+                ul.menu__list
+                    each item in ['Мои работы', 'Обо мне', 'Блог']              
+                        li.menu__item
+                            a(href='#').menu__link #{item}
+        .bottom
+            .rights &copy; Цой Инна | создано с любовью в LoftSchool | 2017

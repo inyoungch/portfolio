@@ -1,3 +1,158 @@
 body{
     background: url(../images/night_no_bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.block{
+    width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 20px;
+}
+
+.auth{
+    color: $white;
+    padding: 10px 20px;
+    background: none;
+    font-weight: 500;
+    font-style: normal;
+    cursor: pointer;
+    transition: .3s;
+    outline: none;
+
+    &:hover{
+        background: $dark-blue;
+        border-color: transparent;
+    }
+}
+
+.center{
+    width: 350px;
+    height: 380px;
+    background: rgba(#19263f, .5);
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.user__pic{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.user__pic-img{
+    vertical-align: middle;
+    max-height: 140%;
+    max-width: 120%;
+}
+
+.user__description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $white;
+}
+
+.user__name{
+    font-size: 28px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.user__info{
+    color:rgba($white, .8);
+}
+
+.welcome-socials{
+    margin-bottom: 35px;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+}
+
+.socials__item{
+    margin-right: 25px;
+
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+
+.socials__icon{
+    width: 30px;
+    height: 30px;
+    transition: .3s;
+    fill: rgba($light-blue, .7);
+    cursor: pointer;
+
+    &:hover{
+        fill:$light-blue;
+    }
+}
+
+.menu__list{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menu__item{
+    text-align: center;
+    flex-grow: 1;
+    padding: 15px 10px;
+    background: $light-blue;
+    border-right: 2px solid rgba($white, .5);
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover{
+        background: rgba($light-blue, .85);
+    }
+
+    &:last-child{
+        border-right: none;
+    }
+}
+
+.menu__link{
+    text-decoration: none;
+    color: $white;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.rights{
+    font-weight: 300;
+    font-style: normal;
+    color: $white;
+    position: absolute;
+    bottom: 0;
+    padding: 45px;
 }

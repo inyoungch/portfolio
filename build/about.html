@@ -11,14 +11,251 @@
     <script src="/assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <h1>Обо мне</h1>
-    <p>Я умею</p>
-    <h2>Меню</h2>
-    <ul class="menu">
-      <li><a href="/index.html">Главная</a></li>
-      <li><a href="/about.html">Обо мне</a></li>
-      <li><a href="my-works.html">Мои работы</a></li>
-      <li><a href="blog.html">Блог</a></li>
-    </ul>
+    <div class="wrapper">
+      <section class="section hero">
+        <header class="header">
+          <div class="hero__socials">
+            <ul class="socials">
+              <li class="socials__item"><a class="socials__item socials__item_vk" href="">
+                  <svg class="socials__icon socials__icon--white">
+                    <use xlink:href="assets/images/sprite.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__item socials__item_github" href="">
+                  <svg class="socials__icon socials__icon--white">
+                    <use xlink:href="assets/images/sprite.svg#github"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__item socials__item_in" href="">
+                  <svg class="socials__icon socials__icon--white">
+                    <use xlink:href="assets/images/sprite.svg#in"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="hamburger hero__menu"><a class="hamburger__menu-link" id="hamburger__menu-link">
+              <div class="hamburger__bars"></div></a></div>
+        </header>
+        <div class="hero__title">
+          <div class="section-title">
+            <svg class="section-title__icon">
+              <use xlink:href="assets/images/sprite.svg#stars1"></use>
+            </svg>
+          </div>
+          <div class="user hero__user">
+            <div class="user__pic"><img class="user__pic-img" src="assets/images/ava.jpg"></div>
+            <div class="user__description">
+              <div class="user__name user__name--big">Цой Инна</div>
+              <div class="user__info">Личный сайт разработчика</div>
+            </div>
+          </div>
+        </div>
+        <div class="arrow-down hero__scroll-btn">
+          <svg class="arrow-down__icon">
+            <use xlink:href="assets/images/sprite.svg#arrow_down"></use>
+          </svg>
+        </div>
+      </section>
+      <section class="section about">
+        <div class="about__left">
+          <div class="about-title">
+            <svg class="about-title__icon">
+              <use xlink:href="assets/images/sprite.svg#stars2"></use>
+            </svg>
+          </div>
+          <div class="about__left-title">
+            <div class="block-title">ОБО МНЕ</div>
+          </div>
+          <div class="about__left-content">
+            <div class="user-description">
+              <div class="user-description__image"><img class="user-description__avatar" src="assets/images/ava.jpg"></div>
+              <div class="user-description__title">
+                <div class="block-subtitle">КТО Я</div>
+              </div>
+              <div class="user-description__text text-content">
+                <p>Я веб разработчик из Казахстана,город Караганда. Мне 23 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.</p>
+                <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about__right">
+          <div class="about__right-title">
+            <div class="block-subtitle">Чем я могу быть вам полезен</div>
+          </div>
+          <div class="about__right-text text-content">
+            <p>Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.</p>
+          </div>
+          <div class="about__right-content">
+            <ul class="skills-list">
+              <li class="skills-list__item">
+                <div class="skills-row">
+                  <div class="skills-row__title">Frontend</div>
+                  <ul class="skills-row__list">
+                    <li class="skills-row__item">
+                      <div class="skill">
+                        <svg class="skill__circle"></svg>
+                        <div class="skill__title">Html5</div>
+                      </div>
+                    </li>
+                    <li class="skills-row__item">
+                      <div class="skill">
+                        <svg class="skill__circle"></svg>
+                        <div class="skill__title">CSS3</div>
+                      </div>
+                    </li>
+                    <li class="skills-row__item">
+                      <div class="skill">
+                        <svg class="skill__circle"></svg>
+                        <div class="skill__title">JavaScript &amp; JQuery</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="skills-list__item">
+                <div class="skills-row">
+                  <div class="skills-row__title">Backend</div>
+                  <ul class="skills-row__list">
+                    <li class="skills-row__item">
+                      <div class="skill">
+                        <svg class="skill__circle"></svg>
+                        <div class="skill__title">Html5</div>
+                      </div>
+                    </li>
+                    <li class="skills-row__item">
+                      <div class="skill">
+                        <svg class="skill__circle"></svg>
+                        <div class="skill__title">CSS3</div>
+                      </div>
+                    </li>
+                    <li class="skills-row__item">
+                      <div class="skill">
+                        <svg class="skill__circle"></svg>
+                        <div class="skill__title">JavaScript &amp; JQuery</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="skills-list__item">
+                <div class="skills-row">
+                  <div class="skills-row__title">Workflow</div>
+                  <ul class="skills-row__list">
+                    <li class="skills-row__item">
+                      <div class="skill">
+                        <svg class="skill__circle"></svg>
+                        <div class="skill__title">Html5</div>
+                      </div>
+                    </li>
+                    <li class="skills-row__item">
+                      <div class="skill">
+                        <svg class="skill__circle"></svg>
+                        <div class="skill__title">CSS3</div>
+                      </div>
+                    </li>
+                    <li class="skills-row__item">
+                      <div class="skill">
+                        <svg class="skill__circle"></svg>
+                        <div class="skill__title">JavaScript &amp; JQuery</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section map">
+        <div class="google-map" id="map"></div>
+        <div class="map__contacts">
+          <div class="contacts center">
+            <div class="contacts__title">
+              <div class="block-subtitle">Контакты</div>
+            </div>
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <div class="contacts-row">
+                  <svg class="contacts-row__icon">skype_n
+                    <use xlink:href="assets/images/sprite.svg#skype_n"></use>
+                  </svg>
+                  <div class="contacts-row__content">nldrummer</div>
+                </div>
+              </li>
+              <li class="contacts__item">
+                <div class="contacts-row">
+                  <svg class="contacts-row__icon">envelope_n
+                    <use xlink:href="assets/images/sprite.svg#envelope_n"></use>
+                  </svg>
+                  <div class="contacts-row__content">inkatsoy08@gmail.com</div>
+                </div>
+              </li>
+              <li class="contacts__item">
+                <div class="contacts-row">
+                  <svg class="contacts-row__icon">phone_n
+                    <use xlink:href="assets/images/sprite.svg#phone_n"></use>
+                  </svg>
+                  <div class="contacts-row__content">+7707 170 85 30</div>
+                </div>
+              </li>
+              <li class="contacts__item">
+                <div class="contacts-row">
+                  <svg class="contacts-row__icon">map_n
+                    <use xlink:href="assets/images/sprite.svg#map_n"></use>
+                  </svg>
+                  <div class="contacts-row__content">Караганда</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <footer class="map__footer footer">
+        <div class="footer__row footer__row-top">
+          <div class="footer__col footer__col-left">
+            <div class="footer__content">
+              <div class="footer__text">Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. </div>
+            </div>
+          </div>
+          <div class="footer__col footer__col-center">
+            <div class="footer__content">
+              <nav class="menu menu-about">
+                <ul class="menu__list">
+                  <li class="menu__item-clear"><a class="menu__link" href="#">Мои работы</a></li>
+                  <li class="menu__item-clear"><a class="menu__link" href="#">Обо мне</a></li>
+                  <li class="menu__item-clear"><a class="menu__link" href="#">Блог</a></li>
+                  <li class="menu__item-clear"><a class="menu__link" href="#">Авторизация</a></li>
+                </ul>
+              </nav>
+              <ul class="socials socials_rounded">
+                <li class="socials__item"><a class="socials__item socials__item_vk" href="">
+                    <svg class="socials__icon socials__icon--white">
+                      <use xlink:href="assets/images/sprite.svg#vk"></use>
+                    </svg></a></li>
+                <li class="socials__item"><a class="socials__item socials__item_github" href="">
+                    <svg class="socials__icon socials__icon--white">
+                      <use xlink:href="assets/images/sprite.svg#github"></use>
+                    </svg></a></li>
+                <li class="socials__item"><a class="socials__item socials__item_in" href="">
+                    <svg class="socials__icon socials__icon--white">
+                      <use xlink:href="assets/images/sprite.svg#in"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__col footer__col-right">
+            <div class="footer__content">
+              <div class="footer__data">
+                <p>nldrummer</p>
+                <p>inkatsoy08@gmail.com</p>
+                <p>+7707 170 85 30</p>
+                <p>Караганда</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__row footer__row-bottom">
+          <div class="rights rights-clear">&copy; Цой Инна | создано с любовью в LoftSchool | 2017</div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

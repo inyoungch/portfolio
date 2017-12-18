@@ -4,5 +4,57 @@ block variables
     - var title = 'Мои работы'
 
 block content
-    h1 Мои работы
-    include ../common/slider.pug
+    .wrapper
+        include ../common/hero.pug
+        section.section.works
+            .works-block
+                .about-title.works__title
+                    svg.about-title__icon.works-title__icon
+                        use(xlink:href=`assets/images/sprite.svg#stars2`)
+                .works__title-center
+                    .block-title.block-title--white МОИ РАБОТЫ
+            .slider
+                .slider__info
+                    .slider__desc
+                        .slider__title.block-subtitle Сайт школы онлайн образования
+                        .slider__technologies HTML, CSS, JAVASCRIPT
+                        button.slider__view-btn
+                            svg.slider__view-btn__icon
+                                use(xlink:href=`assets/images/sprite.svg#link`)
+                            span.slider__view-btn__title Посмотреть сайт
+                .slider__pic
+                .slider__btns
+        section.section.tells
+            .tells-block
+                .about-title.works__title
+                    svg.about-title__icon.works-title__icon.tells__icon
+                        use(xlink:href=`assets/images/sprite.svg#stars3`)
+                .works__title-center.tells__title
+                    .block-title.block-title--white.block-title--big Что обо мне говорят
+                .tells__reviews
+                    .tells__reviews-item
+                        .reviews-item__pic
+                            img(src="assets/images/dima.jpg").reviews-item__img
+                        .reviews-item__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .reviews-item__name Ковальчук Дмитрий
+                        .reviews-item__occ основатель Loftschool
+                    .tells__reviews-item
+                        .reviews-item__pic
+                            img(src="assets/images/vova.jpg").reviews-item__img
+                        .reviews-item__text Этот код выдержеит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                        .reviews-item__name Сабанцев Владимир
+                        .reviews-item__occ преподаватель
+            .form.center
+                .form__title
+                    .block-subtitle.block-subtitle-white СВЯЗАТЬСЯ СО МНОЙ
+                .form__inputs
+                    input.form__item(type='text' value='Ваше имя')
+                    input.form__item(type='text' value='Ваше email')
+                    textarea.form__item.form__text(placeholder='Ваше сообщение')
+                .form__btns
+                    button.form__btn(type='submit') Отправить
+                    button.form__btn.form__btn--gray(type='reset') Очистить
+            .arrow-up.hero__scroll-btn
+                svg.arrow-down__icon
+                    use(xlink:href=`assets/images/sprite.svg#portf_arrow_up`)
+        include ../common/footer.pug
