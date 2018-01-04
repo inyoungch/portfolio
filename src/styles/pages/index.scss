@@ -1,13 +1,8 @@
-body{
-    background: url(../images/night_no_bg.jpg) center center no-repeat;
-    background-size: cover;
-}
-
 .block{
     width: 100%;
 	height: 100%;
-	position: relative;
-	overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .top{
@@ -17,7 +12,7 @@ body{
     margin: 20px;
 }
 
-.auth{
+.auth-btn{
     color: $white;
     padding: 10px 20px;
     background: none;
@@ -26,6 +21,7 @@ body{
     cursor: pointer;
     transition: .3s;
     outline: none;
+    opacity: 1;
 
     &:hover{
         background: $dark-blue;
@@ -35,7 +31,6 @@ body{
 
 .center{
     width: 350px;
-    height: 380px;
     background: rgba(#19263f, .5);
     position: absolute;
     text-align: center;
@@ -156,3 +151,192 @@ body{
     bottom: 0;
     padding: 45px;
 }
+
+//parallax
+
+#parallax{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: $bg;
+}
+
+.parallax__layer{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    will-change: transform;
+}
+
+.parallax__image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+}
+
+//back auth
+
+.auth{
+    transform: rotateY(180deg) translate(50%,-50%);
+    backface-visibility: hidden;
+}
+
+.auth__title-text{
+    margin-bottom: 30px;
+    font-family: Sansus Webissimo;
+    font-weight: normal;
+    font-style: normal;
+    color: $white;
+    position: relative;
+    font-size: 35px;
+    text-transform: uppercase;
+    padding: 16px 0;
+    text-align: center;
+
+    &::after{
+        width: 89px;
+        height: 3px;
+        background: $white;
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+        transform: translateX(-50%);
+    }
+}
+
+.auth__inputs{
+    padding: 0 30px;
+}
+
+.auth__inputs-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.auth__img{
+    width: 45px;
+    height: 45px;
+    background: $iconbg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth__icon{
+    width: 16px;
+    height: 16px;
+    fill: $login;
+}
+
+.auth__input{
+    flex: 1 1 auto;
+    height: 45px;
+    padding-left: 17px;
+}
+
+.auth__check {
+    position: absolute;
+    left: -9999px;
+}
+.man{
+    display: flex;
+}
+.man>input:checked+.auth__check-icon>.auth__yes-icon{
+    width: 20px;
+    height: 20px;
+    background: $light-blue;
+    fill: $white;
+}
+
+.auth__check-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    transition: .2s;
+    background: $white;
+    position: relative;
+}
+
+.auth__yes-icon{
+    width: 0;
+    height: 0;
+    transition: .2s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.auth__check-text, .auth__robot-title, .robot__circle-text{
+    color: rgba($white, .8);
+}
+
+.auth__robot-title{
+    width: 100%;
+}
+
+.auth__inputs-column{
+    flex-direction: column;
+}
+
+.robot__answers{
+    display: flex;
+    flex-direction: row;
+}
+
+.robot{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 20px;
+}
+
+.robot input{
+    position: absolute;
+    left: -9999px;
+}
+
+.robot__circle{
+    display: flex;
+}
+
+.robot__circle-outer{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background: $white;
+    position: relative;
+}
+
+.robot__circle-inner{
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transition: .2s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.robot>input:checked+.robot__circle>.robot__circle-outer>.robot__circle-inner{
+    background: $light-blue;
+    width: 8px;
+    height: 8px;
+}
+
+
+//flip

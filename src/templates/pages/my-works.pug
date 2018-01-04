@@ -8,11 +8,11 @@ block content
         include ../common/hero.pug
         section.section.works
             .works-block
-                .about-title.works__title
-                    svg.about-title__icon.works-title__icon
-                        use(xlink:href=`assets/images/sprite.svg#stars2`)
+                //- .about-title.works__title
+                //-     svg.about-title__icon.works-title__icon
+                //-         use(xlink:href=`assets/images/sprite.svg#stars2`)
                 .works__title-center
-                    .block-title.block-title--white МОИ РАБОТЫ
+                    .block-title.block-title--white.block-title__cover МОИ РАБОТЫ
             .slider
                 .slider__info
                     .slider__desc
@@ -23,14 +23,25 @@ block content
                                 use(xlink:href=`assets/images/sprite.svg#link`)
                             span.slider__view-btn__title Посмотреть сайт
                 .slider__pic
+                    img(src="assets/images/work-1.png").slider__pic-current
                 .slider__btns
+                    .slider__btns-prev
+                        img.slider__btns-view(src='assets/images/work-2.png')
+                        .slider__btns-overlay
+                            svg.slider__icon-down
+                                use(xlink:href=`assets/images/sprite.svg#arrow_down`)
+                    .slider__btns-next
+                        img.slider__btns-view(src='assets/images/work-3.png')
+                        .slider__btns-overlay
+                            svg.slider__icon-up
+                                use(xlink:href=`assets/images/sprite.svg#arrow_down`)
         section.section.tells
             .tells-block
-                .about-title.works__title
-                    svg.about-title__icon.works-title__icon.tells__icon
-                        use(xlink:href=`assets/images/sprite.svg#stars3`)
+                //- .about-title.works__title
+                //-     svg.about-title__icon.works-title__icon.tells__icon
+                //-         use(xlink:href=`assets/images/sprite.svg#stars3`)
                 .works__title-center.tells__title
-                    .block-title.block-title--white.block-title--big Что обо мне говорят
+                    .block-title.block-title--white.block-title--big.block-title__cover Что обо мне говорят
                 .tells__reviews
                     .tells__reviews-item
                         .reviews-item__pic

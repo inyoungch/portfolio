@@ -11,11 +11,11 @@ block content
                 //- .triangle.tringle_fill_beige.about__left-triangle
                 //-     svg.about__left-triangle__icon
                 //-         use(xlink:href=`assets/images/sprite.svg#about_bg_left`)
-                .about-title
-                    svg.about-title__icon
-                        use(xlink:href=`assets/images/sprite.svg#stars2`)
+                //- .about-title
+                //-     svg.about-title__icon
+                //-         use(xlink:href=`assets/images/sprite.svg#stars2`)
                 .about__left-title
-                    .block-title ОБО МНЕ
+                    .block-title.block-title__cover ОБО МНЕ
                 .about__left-content
                     .user-description
                         .user-description__image
@@ -30,7 +30,7 @@ block content
                 //-     svg.about__right-triangle__icon
                 //-         use(xlink:href=`assets/images/sprite.svg#about_bg_right`)
                 .about__right-title
-                    .block-subtitle Чем я могу быть вам полезен
+                    .block-subtitle Чем я могу быть вам полезна
                 .about__right-text.text-content
                     p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
                 .about__right-content
@@ -40,10 +40,12 @@ block content
                                 .skills-row
                                     .skills-row__title #{item}
                                     ul.skills-row__list
-                                        each skill in ['Html5', 'CSS3', 'JavaScript & JQuery']
+                                        each skill in ['HTML5', 'CSS3', 'JavaScript & JQuery']
                                             li.skills-row__item
                                                 .skill
-                                                    svg.skill__circle
+                                                    svg.skill__circle(viewBox='0 0 110 110')
+                                                        circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                                        circle.circle__second(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)")
                                                     .skill__title #{skill}
         section.section.map
             .google-map#map
@@ -66,3 +68,16 @@ block content
                                         use(xlink:href=`assets/images/sprite.svg#${contact[0]}`)
                                     .contacts-row__content #{contact[1]}
         include ../common/footer.pug
+        script(async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgOLt0EeQg_UL0qmU9DqGmq8NvJiVTiZ4&callback=initMap")
+    .dark-menu#dark-menu
+        .dark-menu__items
+            nav.nav_hamburger
+                ul.nav__list#nav__list_hamburger
+                    li.nav__item_hamburger
+                        a.nav__link Мои работы
+                    li.nav__item_hamburger
+                        a.nav__link Блог
+                    li.nav__item_hamburger
+                        a.nav__link Обо мне
+                    li.nav__item_hamburger
+                        a.nav__link Авторизация

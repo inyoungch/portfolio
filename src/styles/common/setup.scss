@@ -1,10 +1,14 @@
 //vars
+$bg:#223b65;
 $white: #ffffff;
 $dark-blue:#083c96;
 $light-blue:#004cd1;
 $beige:#f2f0e8;
 $dirty:#474b57;
 $dark:#1c1f29;
+$gray:#dfdcd5;
+$iconbg:#f0efe9;
+$login:#c4cbcd;
 
 *{
     box-sizing: border-box;
@@ -37,6 +41,7 @@ body{
 	// height: 100%;
 	position: relative;
     overflow: hidden;
+    min-height: 100%;
 }
 
 .section{

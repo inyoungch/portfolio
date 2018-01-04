@@ -4,27 +4,77 @@ block variables
     - var title = 'Добро пожаловать'
 
 block content
+    .parallax(id='parallax')
+        .parallax__layer
+            video(src='assets/images/parallax/night.mp4' autoplay="autoplay" loop="loop").parallax__image
+        .parallax__layer
+            img.parallax__image(src='assets/images/parallax/parallax__layer.png')
     .block
         .top
-            button.auth Авторизоваться
-        .center
-            .user.welcome__user
-                .user__pic
-                    img.user__pic-img(src="assets/images/ava.jpg")
-                .user__description
-                    .user__name Цой Инна
-                    .user__info Личный сайт разработчика
-            .welcome-socials
-                ul.socials
-                    each item in ['vk', 'github', 'in']
-                        li.socials__item
-                            a(href="#" class=`socials__link socials__${item}`)
-                                svg.socials__icon
-                                    use(xlink:href=`assets/images/sprite.svg#${item}`)
-            nav.menu.welcome__menu
-                ul.menu__list
-                    each item in ['Мои работы', 'Обо мне', 'Блог']              
-                        li.menu__item
-                            a(href='#').menu__link #{item}
+            button.auth-btn Авторизоваться
+        .card#card
+            .center.front
+                .user.welcome__user
+                    .user__pic
+                        img.user__pic-img(src="assets/images/ava.jpg")
+                    .user__description
+                        .user__name Цой Инна
+                        .user__info Личный сайт разработчика
+                .welcome-socials
+                    ul.socials
+                        each item in ['vk', 'github', 'in']
+                            li.socials__item
+                                a(href="#" class=`socials__link socials__${item}`)
+                                    svg.socials__icon
+                                        use(xlink:href=`assets/images/sprite.svg#${item}`)
+                nav.menu.welcome__menu
+                    ul.menu__list
+                        each item in ['Мои работы', 'Обо мне', 'Блог']       
+                            li.menu__item
+                                a(href='#').menu__link #{item}
+            .auth.center.back
+                form.auth__form(action='admin' method='post')
+                    .auth__block
+                        .auth__title 
+                            h1.auth__title-text АВТОРИЗУЙТЕСЬ
+                        .auth__inputs
+                            .auth__inputs-row
+                                .auth__img
+                                    svg.auth__icon
+                                        use(xlink:href=`assets/images/sprite.svg#login`)
+                                input.auth__input(type='text' name='name' placeholder='Логин')
+                            .auth__inputs-row
+                                .auth__img
+                                    svg.auth__icon
+                                        use(xlink:href=`assets/images/sprite.svg#password`)
+                                input.auth__input(type='password' name='password' placeholder='Пароль')
+                            .auth__inputs-row
+                                label.man
+                                    input(type="checkbox" id="man" name='man').auth__check
+                                    .auth__check-icon
+                                        svg.auth__yes-icon
+                                            use(xlink:href=`assets/images/sprite.svg#check`)
+                                    .auth__check-text Я человек
+                            .auth__inputs-row.auth__inputs-column
+                                .auth__robot-title Вы точно не робот?
+                                .robot__answers
+                                    label.robot(for='yes')
+                                        input(type="radio" id="yes" name='robot' value='yes')
+                                        .robot__circle
+                                            .robot__circle-outer
+                                                .robot__circle-inner
+                                            .robot__circle-text Да
+                                    label.robot(for='no')
+                                        input(type="radio" id="no" name='robot' value='no')
+                                        .robot__circle
+                                            .robot__circle-outer
+                                                .robot__circle-inner
+                                            .robot__circle-text Не уверен
+                        nav.menu.welcome__menu
+                            ul.menu__list            
+                                li.menu__item
+                                    a(href='#').menu__link.main-btn На главную
+                                li.menu__item
+                                    a(href='#').menu__link Авторизоваться
         .bottom
             .rights &copy; Цой Инна | создано с любовью в LoftSchool | 2017

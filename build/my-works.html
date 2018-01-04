@@ -30,7 +30,7 @@
                   </svg></a></li>
             </ul>
           </div>
-          <div class="hamburger hero__menu"><a class="hamburger__menu-link" id="hamburger__menu-link">
+          <div class="hamburger__menu"><a class="hamburger__menu-link" id="hamburger__menu-link" href="#">
               <div class="hamburger__bars"></div></a></div>
         </header>
         <div class="hero__title">
@@ -55,13 +55,8 @@
       </section>
       <section class="section works">
         <div class="works-block">
-          <div class="about-title works__title">
-            <svg class="about-title__icon works-title__icon">
-              <use xlink:href="assets/images/sprite.svg#stars2"></use>
-            </svg>
-          </div>
           <div class="works__title-center">
-            <div class="block-title block-title--white">МОИ РАБОТЫ</div>
+            <div class="block-title block-title--white block-title__cover">МОИ РАБОТЫ</div>
           </div>
         </div>
         <div class="slider">
@@ -76,19 +71,29 @@
               </button>
             </div>
           </div>
-          <div class="slider__pic"></div>
-          <div class="slider__btns"></div>
+          <div class="slider__pic"><img class="slider__pic-current" src="assets/images/work-1.png"></div>
+          <div class="slider__btns">
+            <div class="slider__btns-prev"><img class="slider__btns-view" src="assets/images/work-2.png">
+              <div class="slider__btns-overlay">
+                <svg class="slider__icon-down">
+                  <use xlink:href="assets/images/sprite.svg#arrow_down"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="slider__btns-next"><img class="slider__btns-view" src="assets/images/work-3.png">
+              <div class="slider__btns-overlay">
+                <svg class="slider__icon-up">
+                  <use xlink:href="assets/images/sprite.svg#arrow_down"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section tells">
         <div class="tells-block">
-          <div class="about-title works__title">
-            <svg class="about-title__icon works-title__icon tells__icon">
-              <use xlink:href="assets/images/sprite.svg#stars3"></use>
-            </svg>
-          </div>
           <div class="works__title-center tells__title">
-            <div class="block-title block-title--white block-title--big">Что обо мне говорят</div>
+            <div class="block-title block-title--white block-title--big block-title__cover">Что обо мне говорят</div>
           </div>
           <div class="tells__reviews">
             <div class="tells__reviews-item">
@@ -136,10 +141,10 @@
             <div class="footer__content">
               <nav class="menu menu-about">
                 <ul class="menu__list">
-                  <li class="menu__item-clear"><a class="menu__link" href="#">Мои работы</a></li>
-                  <li class="menu__item-clear"><a class="menu__link" href="#">Обо мне</a></li>
-                  <li class="menu__item-clear"><a class="menu__link" href="#">Блог</a></li>
-                  <li class="menu__item-clear"><a class="menu__link" href="#">Авторизация</a></li>
+                  <li class="menu__item-clear"><a class="menu__link menu__link--white" href="#">Мои работы</a></li>
+                  <li class="menu__item-clear"><a class="menu__link menu__link--white" href="#">Обо мне</a></li>
+                  <li class="menu__item-clear"><a class="menu__link menu__link--white" href="#">Блог</a></li>
+                  <li class="menu__item-clear"><a class="menu__link menu__link--white" href="#">Авторизация</a></li>
                 </ul>
               </nav>
               <ul class="socials socials_rounded">
