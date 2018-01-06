@@ -28,10 +28,13 @@ block content
                                     svg.socials__icon
                                         use(xlink:href=`assets/images/sprite.svg#${item}`)
                 nav.menu.welcome__menu
-                    ul.menu__list
-                        each item in ['Мои работы', 'Обо мне', 'Блог']       
-                            li.menu__item
-                                a(href='#').menu__link #{item}
+                    ul.menu__list  
+                        li.menu__item
+                            +link('my-works.html', 'Мои работы')(class="menu__link") 
+                        li.menu__item
+                            +link('about.html', 'Обо мне')(class="menu__link") 
+                        li.menu__item
+                            +link('blog.html', 'Блог')(class="menu__link") 
             .auth.center.back
                 form.auth__form(action='admin' method='post')
                     .auth__block
@@ -73,8 +76,8 @@ block content
                         nav.menu.welcome__menu
                             ul.menu__list            
                                 li.menu__item
-                                    a(href='#').menu__link.main-btn На главную
+                                    +link('#', 'На главную')(class="menu__link main-btn") 
                                 li.menu__item
-                                    a(href='#').menu__link Авторизоваться
+                                    +link('#', 'Войти')(class="menu__link main-btn") 
         .bottom
             .rights &copy; Цой Инна | создано с любовью в LoftSchool | 2017
