@@ -1,19 +1,20 @@
 .hero{
     background: url(../images/hero-bg.jpg) center center no-repeat;
+    background-size: cover;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 1fr 100px;
+    grid-template-rows: rem(80px) 1fr rem(100px);
     grid-template-areas: 
         "header"
         "content"
         "bottom";
-    grid-gap: 10px 20px;
+    grid-gap: rem(10px) rem(20px);
 }
 .header{
     grid-area: header;
     display: flex;
     justify-content: space-between;
-    margin: 20px;
+    margin: rem(20px);
 }
 
 .hero__title{
@@ -33,55 +34,154 @@
 }
 
 //hamburger
-.hamburger__menu{
-    position: absolute;
-    top: 3%;
-    right: 3%;
-}
+// .hamburger-menu{
+//     position: absolute;
+//     top: 3%;
+//     right: 3%;
+// }
 
-.hamburger__menu-link{
-    vertical-align: middle;
+// .hamburger-menu__btn{
+//     position: relative;
+// }
+
+// .hamburger-menu__bars {
+// 		background: $white;
+// 		width: rem(40px);
+// 		height: rem(5px);
+// 		border-radius: rem(3px);
+// 		content: "";
+// 		display: block;
+// 		position: absolute;
+// }
+
+// .hamburger__menu-link.is-active .hamburger__bars{
+//     background: transparent;
+//     &:before {
+//       transform: translateY(rem(10px)) translateX(0) rotate(45deg);
+//       border-radius: rem(5px); 
+//     }
+
+//     &:after {
+//       transform: translateY(rem(-7px)) translateX(0) rotate(-45deg);
+//       border-radius: rem(5px); 
+//     }
+//   }
+
+.cmn-toggle-switch {
+    display: block;
     position: relative;
-    align-items: center;
-    margin-left: 1.875rem;
-    z-index: 100;
-}
-
-.hamburger__bars {
-	&, &:before, &:after {
-		background: $white;
-		width: 40px;
-		height: 5px;
-		border-radius: 3px;
-	}
-
-	&:before, &:after {
-		content: "";
-		display: block;
-		position: absolute;
-	}
-
-	&:before {
-        top: 15px;
-	}
-
-	&:after {
-		bottom: 15px;
-	}
-}
-
-.hamburger__menu-link.is-active .hamburger__bars{
-    background: transparent;
-    &:before {
-      transform: translateY(10px) translateX(0) rotate(45deg);
-      border-radius: 5px; 
-    }
-
-    &:after {
-      transform: translateY(-7px) translateX(0) rotate(-45deg);
-      border-radius: 5px; 
-    }
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: rem(40px);
+    height: rem(40px);
+    font-size: 0;
+    text-indent: rem(-9999px);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: background 0.3s;
+            transition: background 0.3s;
   }
+   
+  .cmn-toggle-switch:focus {
+    outline: none;
+  }
+
+  .cmn-toggle-switch span {
+    display: block;
+    position: absolute;
+    background: white;
+    width: rem(40px);
+    height: rem(5px);
+	border-radius: rem(3px);
+  }
+   
+  .cmn-toggle-switch span::before,
+  .cmn-toggle-switch span::after {
+    position: absolute;
+    display: block;
+    width: rem(40px);
+    height: rem(5px);
+	border-radius: rem(3px);
+    background-color: #fff;
+    content: "";
+  }
+   
+  .cmn-toggle-switch span::before {
+    top: rem(-15px);
+  }
+   
+  .cmn-toggle-switch span::after {
+    bottom: rem(-15px);
+  }
+
+
+  /**
+ * Style 2
+ */
+.cmn-toggle-switch__htx {
+    background-color: transparent;
+  }
+   
+  .cmn-toggle-switch__htx span {
+    -webkit-transition: background 0 0.3s;
+            transition: background 0 0.3s;
+  }
+   
+  .cmn-toggle-switch__htx span::before,
+  .cmn-toggle-switch__htx span::after {
+    -webkit-transition-duration: 0.3s, 0.3s;
+            transition-duration: 0.3s, 0.3s;
+    -webkit-transition-delay: 0.3s, 0;
+            transition-delay: 0.3s, 0;
+  }
+   
+  .cmn-toggle-switch__htx span::before {
+    -webkit-transition-property: top, -webkit-transform;
+            transition-property: top, transform;
+  }
+   
+  .cmn-toggle-switch__htx span::after {
+    -webkit-transition-property: bottom, -webkit-transform;
+            transition-property: bottom, transform;
+  }
+   
+  /* active state*/
+  .cmn-toggle-switch__htx.active {
+    background-color: transparent;
+  }
+   
+  .cmn-toggle-switch__htx.active span {
+    background: none;
+  }
+   
+  .cmn-toggle-switch__htx.active span::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+   
+  .cmn-toggle-switch__htx.active span::after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+   
+  .cmn-toggle-switch__htx.active span::before,
+  .cmn-toggle-switch__htx.active span::after {
+    -webkit-transition-delay: 0, 0.3s;
+            transition-delay: 0, 0.3s;
+  }
+
+
+
 
 .hero__title{
     position: relative;
@@ -94,19 +194,31 @@
 }
 
 .user__name--big{
-    font-size: 35px;
+    font-size: rem(35px);
 }
 
-.section-title__icon{
-    fill: transparent;
-    stroke: rgba($white, .07);
-    width: 480px;
-    height: 280px;
+.hero__user{
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        min-width: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        opacity: .1;
+        width: rem(480px);
+        height: rem(280px);
+        background-image: url(../../assets/images/icons/stars1.svg);
+        }
 }
 
 .arrow-down__icon{
-    width: 30px;
-    height: 20px;
+    width: rem(30px);
+    height: rem(20px);
     fill: rgba($white, .7);
     transition: .3s;
     &:hover{
@@ -133,12 +245,24 @@
       width: 50%;
       height: 7%;
       background: linear-gradient(to top left,$white 0%,$white 50%,transparent calc(50% + 1px),transparent 100%);
+
+      @include tablets{
+        background: linear-gradient(to top left,$beige 0%,$beige 50%,transparent calc(50% + 1px),transparent 100%);
+      }
+    }
+
+    @include tablets{
+        flex-direction: column;
     }
   }
 
 .about__left, .about__right{
     width: 50%;
-    padding: 0 90px;
+    padding: 0 rem(90px);
+
+    @include tablets{
+        width: 100%;
+    }
 }
 .about__left{
     background: $beige;
@@ -150,11 +274,33 @@
 
 .about__right{
     background: $white;
+
+    @include tablets{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .about__left-title{
-    margin-bottom: 50px;
+    margin-bottom: rem(50px);
     position: relative;
+}
+
+.about__right-title{
+    @include tablets{
+        padding-top: rem(50px);    
+    }
+}
+
+.about__right-text{
+    @include tablets{
+        text-align: center;   
+    }
+}
+
+.about__right-title{
+    padding-top: rem(50px);
 }
 
 .block-title__cover{
@@ -170,7 +316,7 @@
     background-size: contain;
     background-position: center center;
     opacity: .1;
-    height: 125px;
+    height: rem(125px);
     background-image: url(../../assets/images/icons/stars2.svg);
     }
 }
@@ -180,19 +326,19 @@
     font-weight: normal;
     font-style: normal;
     color: $dirty;
-    font-size: 63px;
+    font-size: rem(63px);
 }
 
 .about-title__icon{
     fill: transparent;
     stroke: rgba($light-blue, .1);
-    width: 220px;
-    height: 130px;
+    width: rem(220px);
+    height: rem(130px);
     transform: rotate(180deg);
 }
 
 .user-description__image{
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
 }
 
 .user-description__avatar{
@@ -202,7 +348,7 @@
 }
 
 .user-description__title{
-    margin-bottom: 30px; 
+    margin-bottom: rem(30px); 
 }
 
 .block-subtitle{
@@ -211,14 +357,14 @@
     font-style: normal;
     color: $dirty;
     position: relative;
-    font-size: 35px;
+    font-size: rem(35px);
     text-transform: uppercase;
-    padding-bottom: 20px;   
+    padding-bottom: rem(20px);   
     text-align: center;
 
     &::after{
-        width: 89px;
-        height: 3px;
+        width: rem(89px);
+        height: rem(3px);
         background: $dirty;
         content: '';
         display: block;
@@ -232,24 +378,24 @@
 
 .text-content{
     text-align: left;
-    line-height: 24px;
+    line-height: rem(24px);
     color: $dirty;
 }
 
 .about__right-content{
-    padding-left: 40px;
+    padding-left: rem(40px);
 }
 
 .skills-row{
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
 }
 
 .skills-row__title{
-    font-size: 28px;
+    font-size: rem(28px);
     color: $dirty;
     font-weight: 500;
     font-style: normal;
-    margin-bottom: 15px;
+    margin-bottom: rem(15px);
 }
 
 .skills-row__list{
@@ -257,7 +403,7 @@
 }
 
 .skill__title{
-    font-size: 12.5px;
+    font-size: rem(12.5px);
     color: $dark-blue;
     font-weight: 500;
     font-style: normal;
@@ -269,8 +415,8 @@
 
 .skills-row__item{
     position: relative;
-    width: 110px;
-    margin-right: 38px;
+    width: rem(110px);
+    margin-right: rem(38px);
 }
 
 .skill__circle{
@@ -289,26 +435,40 @@
 #map {
     display: flex;
     width: 100%;
-    height: 950px;
+    height: rem(950px);
 }
 
 .contacts{
-    width: 580px;
-    height: 295px;
+    width: rem(580px);
+    height: rem(295px);
     background: rgba($white, .7);
+
+    @include iphone5{
+        width: 100%;
+        height: 40%;
+        top: 20%;
+    }
 }
 
 .contacts__title{
-    margin: 30px;
+    margin: rem(30px);
 }
 
 .contacts__list{
     column-count: 2;
     display: inline-block;
+
+    @include iphone5{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .contacts__item{
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
+    @include iphone5{
+        margin-bottom: rem(15px);
+    }
 }
 
 .contacts-row{
@@ -316,10 +476,10 @@
 }
 
 .contacts-row__icon{
-    width: 45px;
-    height: 45px;
+    width: rem(45px);
+    height: rem(45px);
     fill: $light-blue;
-    margin-right: 15px;
+    margin-right: rem(15px);
 }
 
 .contacts-row__content{
@@ -344,22 +504,90 @@
     background: rgba($dark, .85);
     display: flex;
     justify-content: space-around;
-    padding: 30px 0;
+    padding: rem(30px) 0;
+
+    @include tablets{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "top top"
+            "bottom bottom";
+        padding: 0;
+    }
+    @include iphone5{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+    }
 }
 
 .footer__col{
     width: 100%;
-    padding: 0 30px;
+    padding: 0 rem(30px);
     border-right: 1px solid rgba($white, .2)
+}
+
+.footer__col-left{
+    @include tablets{
+        grid-area: top;
+        text-align: center;
+        border-right: none;
+    }
+}
+
+.footer__col-center{
+    @include tablets{
+        border-right: none;
+    }
+    @include iphone5{
+        padding: 0;
+        text-align: center;
+    }
+}
+
+.footer__col-right{
+    @include tablets{
+        text-align: right;
+        border-right: none;
+    }
+    @include iphone5{
+        padding: 0;
+        text-align: center;
+    }
 }
 
 .footer__text, .footer__data{
     font-weight: 300;
     font-style: normal;
+
+    @include iphone5{
+        padding: rem(10px);
+    }
 }
 
+.footer__text{
+    @include tablets{
+        padding-top: rem(30px);
+    }
+}
+
+.socials--left{
+    @include tablets{
+        justify-content: flex-start;
+    }
+    @include iphone5{
+        justify-content: center;
+    }
+}
 .menu-about{
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
+    @include iphone5{
+        margin-bottom: rem(20px);
+    }
 }
 
 .menu__item-clear{
@@ -383,7 +611,7 @@
 
 .footer__row-bottom{
     background: rgba($dark-blue, .85);
-    padding: 10px;
+    padding: rem(10px);
     display: flex;
     justify-content: center;
 }
@@ -396,7 +624,7 @@
 
 .dark-menu {
     position: absolute;
-    left: -9999px;
+    left: rem(-9999px);
     right: 0;
     background: rgba($dark-blue, .85);
     align-items: center;
@@ -410,12 +638,12 @@
 }
 
 .nav__link{
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
     font-family: Sansus Webissimo;
     font-weight: normal;
     font-style: normal;
     color: $white;
-    font-size: 63px;
+    font-size: rem(63px);
     text-transform: uppercase;
     text-align: center;
 }

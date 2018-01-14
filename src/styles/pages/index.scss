@@ -9,12 +9,16 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin: 20px;
+    margin: rem(20px);
+
+    @include phones{
+        justify-content: center;
+    }
 }
 
 .auth-btn{
     color: $white;
-    padding: 10px 20px;
+    padding: rem(10px) rem(20px);
     background: none;
     font-weight: 500;
     font-style: normal;
@@ -30,7 +34,7 @@
 }
 
 .center{
-    width: 350px;
+    width: rem(350px);
     background: rgba(#19263f, .5);
     position: absolute;
     text-align: center;
@@ -43,15 +47,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: rem(30px);
 }
 
 .user__pic{
-    width: 150px;
-    height: 150px;
+    width: rem(150px);
+    height: rem(150px);
     border-radius: 50%;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: rem(20px);
+    z-index: 10;
 }
 
 .user__pic-img{
@@ -68,7 +73,7 @@
 }
 
 .user__name{
-    font-size: 28px;
+    font-size: rem(28px);
     font-weight: 500;
     font-style: normal;
 }
@@ -78,7 +83,7 @@
 }
 
 .welcome-socials{
-    margin-bottom: 35px;
+    margin-bottom: rem(35px);
 }
 
 .socials{
@@ -87,7 +92,7 @@
 }
 
 .socials__item{
-    margin-right: 25px;
+    margin-right: rem(25px);
 
     &:last-child{
         margin-right: 0;
@@ -96,8 +101,8 @@
 
 
 .socials__icon{
-    width: 30px;
-    height: 30px;
+    width: rem(30px);
+    height: rem(30px);
     transition: .3s;
     fill: rgba($light-blue, .7);
     cursor: pointer;
@@ -116,7 +121,7 @@
 .menu__item{
     text-align: center;
     flex-grow: 1;
-    padding: 15px 10px;
+    padding: rem(15px) rem(10px);
     background: $light-blue;
     border-right: 2px solid rgba($white, .5);
     cursor: pointer;
@@ -142,6 +147,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    text-align: center;
 }
 .rights{
     font-weight: 300;
@@ -149,7 +155,7 @@
     color: $white;
     position: absolute;
     bottom: 0;
-    padding: 45px;
+    padding: rem(45px);
 }
 
 //parallax
@@ -178,7 +184,9 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  width: 110%;
 }
 
 //back auth
@@ -189,20 +197,20 @@
 }
 
 .auth__title-text{
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
     font-family: Sansus Webissimo;
     font-weight: normal;
     font-style: normal;
     color: $white;
     position: relative;
-    font-size: 35px;
+    font-size: rem(35px);
     text-transform: uppercase;
-    padding: 16px 0;
+    padding: rem(16px) 0;
     text-align: center;
 
     &::after{
-        width: 89px;
-        height: 3px;
+        width: rem(89px);
+        height: rem(3px);
         background: $white;
         content: '';
         display: block;
@@ -215,7 +223,7 @@
 }
 
 .auth__inputs{
-    padding: 0 30px;
+    padding: 0 rem(30px);
 }
 
 .auth__inputs-row{
@@ -223,12 +231,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: rem(20px);
 }
 
 .auth__img{
-    width: 45px;
-    height: 45px;
+    width: rem(45px);
+    height: rem(45px);
     background: $iconbg;
     display: flex;
     justify-content: center;
@@ -236,35 +244,35 @@
 }
 
 .auth__icon{
-    width: 16px;
-    height: 16px;
+    width: rem(16px);
+    height: rem(16px);
     fill: $login;
 }
 
 .auth__input{
     flex: 1 1 auto;
-    height: 45px;
-    padding-left: 17px;
+    height: rem(45px);
+    padding-left: rem(17px);
 }
 
 .auth__check {
     position: absolute;
-    left: -9999px;
+    left: rem(-9999px);
 }
 .man{
     display: flex;
 }
 .man>input:checked+.auth__check-icon>.auth__yes-icon{
-    width: 20px;
-    height: 20px;
+    width: rem(20px);
+    height: rem(20px);
     background: $light-blue;
     fill: $white;
 }
 
 .auth__check-icon{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: rem(20px);
+    height: rem(20px);
+    margin-right: rem(10px);
     transition: .2s;
     background: $white;
     position: relative;
@@ -300,12 +308,12 @@
 .robot{
     display: flex;
     flex-direction: row;
-    margin: 10px 20px;
+    margin: rem(10px) rem(20px);
 }
 
 .robot input{
     position: absolute;
-    left: -9999px;
+    left: rem(-9999px);
 }
 
 .robot__circle{
@@ -314,9 +322,9 @@
 
 .robot__circle-outer{
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: rem(20px);
+    height: rem(20px);
+    margin-right: rem(10px);
     background: $white;
     position: relative;
 }
@@ -334,8 +342,8 @@
 
 .robot>input:checked+.robot__circle>.robot__circle-outer>.robot__circle-inner{
     background: $light-blue;
-    width: 8px;
-    height: 8px;
+    width: rem(8px);
+    height: rem(8px);
 }
 
 

@@ -7,13 +7,9 @@ section.section.hero
                         a(href="" class=`socials__item socials__item_${item}`)
                             svg.socials__icon.socials__icon--white
                                 use(xlink:href=`assets/images/sprite.svg#${item}`)
-        .hamburger__menu
-            a.hamburger__menu-link#hamburger__menu-link(href='#')
-                .hamburger__bars
+        button.hamburger-menu.cmn-toggle-switch.cmn-toggle-switch__htx
+            span.hamburger-menu__bars toggle menu
     .hero__title
-        .section-title
-            svg.section-title__icon
-                use(xlink:href=`assets/images/sprite.svg#stars1`)
         .user.hero__user
             .user__pic
                 img.user__pic-img(src="assets/images/ava.jpg")

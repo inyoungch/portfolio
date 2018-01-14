@@ -10,12 +10,53 @@ $gray:#dfdcd5;
 $iconbg:#f0efe9;
 $login:#c4cbcd;
 
+
+$tablets:768px;
+$phones:480px;
+$iphone5:320px;
+
+
+
+@function rem($px){
+    @return $px  / 16px+0rem;
+}
+
+@mixin tablets{
+    @media screen and (max-width:$tablets){
+        @content;
+    }
+}
+
+@mixin phones{
+    @media screen and (max-width:$phones){
+        @content;
+    }
+}
+
+@mixin iphone5{
+    @media screen and (max-width:$iphone5){
+        @content;
+    }
+}
+
 *{
     box-sizing: border-box;
 }
 
 html{
 	font-size: 16px;
+
+	@include tablets{
+		font-size: 15px;
+	}
+
+	@include phones{
+		font-size: 14px;
+	}
+
+	@include iphone5{
+		font-size: 12px;
+	}
 }
 
 html, body{
@@ -30,7 +71,6 @@ body{
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
-    font-size: 16px;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	position: relative;
@@ -73,3 +113,6 @@ h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
 
+button{
+    cursor: pointer;
+}
